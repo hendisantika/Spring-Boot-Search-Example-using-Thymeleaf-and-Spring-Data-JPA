@@ -29,4 +29,11 @@ public class ShopService {
         List<Shop> list = shopRepository.findAll();
         return list;
     }
+
+    /*
+     * TODO: Get Shop By keyword
+     */
+    public List<Shop> getByKeyword(String keyword) {
+        return shopRepository.findByKeyword(keyword);
+    }
 }
