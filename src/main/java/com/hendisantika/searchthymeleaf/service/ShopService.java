@@ -1,8 +1,11 @@
 package com.hendisantika.searchthymeleaf.service;
 
+import com.hendisantika.searchthymeleaf.model.Shop;
 import com.hendisantika.searchthymeleaf.repository.ShopRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,4 +21,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ShopService {
     private final ShopRepository shopRepository;
+
+    /*
+     * TODO: Get the List of Shops
+     */
+    public List<Shop> getAllShops() {
+        List<Shop> list = shopRepository.findAll();
+        return list;
+    }
 }
