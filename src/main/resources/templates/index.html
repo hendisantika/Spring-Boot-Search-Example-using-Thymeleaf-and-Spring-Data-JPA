@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>SEARCH</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 align="center">Search in Thymeleaf Template</h2>
+    <form method="get" th:action="@{/search}">
+        <input name="keyword" placeholder="Find by Owner Name & Shop Type" size="50" th:value="${keyword}" type="text">
+        <button class="btn btn-info" type="submit">Search</button>
+        <button class="btn btn-info" type="submit">Reset</button>
+    </form>
+    <table class="table table-bordered table-sm mt-2">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Owner Name</th>
+            <th>Shop Type</th>
+            <th>Shop Number</th>
+            <th>Address</th>
+            <th>Country</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="l : ${list}" th:field="${l}">
+            <td th:text="${lStat.index+1}"></td>
+            <td th:text="${l.ownerName}"></td>
+            <td th:text="${l.shopType}"></td>
+            <td th:text="${l.shopNo}"></td>
+            <td th:text="${l.address}"></td>
+            <td th:text="${l.country}"></td>
+            <td>
+                <a th:href="@{/update/{id}(id=${l.id})}"><i class="fa fa-edit"></i></a>
+                <a th:href="@{/delete/{id}(id=${l.id})}"><i class="fa fa-remove"></i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
