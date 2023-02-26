@@ -7,4 +7,4 @@ CREATE TABLE shop
     shop_no    bigint  NOT NULL,
     shop_type  varchar(255),
     PRIMARY KEY (id)
-) engine=InnoDB
+) engine=InnoDB;
