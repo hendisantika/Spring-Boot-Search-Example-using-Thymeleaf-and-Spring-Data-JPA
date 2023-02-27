@@ -8,3 +8,13 @@
 3. Change Db credentials in `application.properties` file
 4. Run the application: `mvn clean spring-boot:run`
 5. Open your favorite browser: http://localhost:8080
+
+### Image screen shot
+
+Home Page
+
+![Home Page](img/home.png "Home Page")
+
+Search Page
+
+![Search Page](img/search.png "Search Page")
